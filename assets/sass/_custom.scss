@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    color: white;
+}
+
+.container{
+    position: relative;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-gap: 0 40px;
+    grid-template-rows: auto;
+    .box{
+        position: relative;
+        height: 400px;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: white;
+            transform: skew(2deg, 2deg);
+            z-index: -1;
+        }
+        .content{
+            position: relative;
+            padding: 20px;
+            h2{
+                position: absolute;
+                top: -60px;
+                right: 20px;
+                margin: 0;
+                padding: 0;
+                font-size: 10em;
+                color: rgba(255,255,255,.05);
+                transition: .5s;
+            }
+            h3{
+                margin: 0 0 10px;
+                padding: 0;
+                font-size: 24px;
+                font-weight: 500;
+                color: white;
+            }
+            p{
+                margin: 0;
+                padding: 0;
+                color: white;
+                font-size: 1rem;
+            }
+            a{
+                position: relative;
+                margin: 30px 0 0;
+                padding: 10px 20px;
+                text-decoration: none;
+                border: 1px solid white;
+                display: inline-block;
+                color: white;
+                transition: .5s;
+                transform: translate(-40px);
+                opacity: 0;
+                visibility: hidden;
+
+                &:hover{
+                    color: $primary;
+                    background: white;
+                }
+            }
+        }
+        &:hover .content h2{
+            top: -140px;
+        }
+        &:hover .content a{
+            transform: translate(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
